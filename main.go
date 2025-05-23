@@ -92,7 +92,7 @@ func main() {
 		fmt.Printf("prd: %s", prd)
 
 		// 保存上传文件到临时目录
-		tempFile := filepath.Join("./", fileHeader.Filename)
+		tempFile := filepath.Join("/data/wwwroot/h5.bj.gooki.com/loon-sender", fileHeader.Filename)
 		if err := c.SaveUploadedFile(fileHeader, tempFile); err != nil {
 			c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to save file"})
 			return
